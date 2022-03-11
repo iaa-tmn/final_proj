@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 import 'User.dart';
+import 'Navigation.dart';
 
 class userScr extends StatelessWidget {
   const userScr ({Key? key}) : super(key: key);
@@ -14,6 +15,8 @@ class userScr extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: globalAppBar(context),
+      drawer: navDraw(context),
       body: UsersListScreen(),
     );
   }

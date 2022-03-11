@@ -1,5 +1,6 @@
 import 'package:final_proj/login_screen.dart';
 import 'package:final_proj/tasks_list.dart';
+import 'package:final_proj/themes.dart';
 import 'package:flutter/material.dart';
 
 import 'list_users.dart';
@@ -19,6 +20,7 @@ class _basicWidgetState extends State<basicWidget> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: globalThemes(false),
       initialRoute: '/login',
       routes: {
         '/login':(context)=>const loginScreen(),

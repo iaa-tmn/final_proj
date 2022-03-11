@@ -3,7 +3,7 @@ class Task{
   final int? userid;
   final int? id;
   final String? title;
-  final bool? completed;
+  bool? completed;
 
   Task({
     required this.userid,

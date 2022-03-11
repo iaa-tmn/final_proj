@@ -1,4 +1,8 @@
 
+import 'package:flutter/material.dart';
+
+import 'arguments.dart';
+
 class User {
   final int? id;
   final String? name;
@@ -82,4 +86,23 @@ class Company {
 
 }
 
+class userCard extends StatelessWidget {
+  const userCard({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final TaskScreenArguments args = ModalRoute.of(context)!.settings.arguments as TaskScreenArguments;
+    final User user=args.user;
+    return Column(
+      children: [
+        Text("ФИО: ${user.name}",style: Theme.of(context).textTheme.headline3),
+        Text("Email: ${user.email}",style: Theme.of(context).textTheme.headline4),
+        Text("Телефон: ${user.phone}",style: Theme.of(context).textTheme.headline4),
+        Text("Website: ${user.website}",style: Theme.of(context).textTheme.headline6),
+        Text("Company: ${user.company!.name}",style: Theme.of(context).textTheme.headline4),
+        Text("Address: ${user.address!.zipcode} ${user.address!.city} ${user.address!.street} ${user.address!.suite}",style: Theme.of(context).textTheme.headline6),
+      ],
+    );
+  }
+}
 
